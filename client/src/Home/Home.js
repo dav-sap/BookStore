@@ -1,13 +1,10 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import BookList from "./BookList/BookList";
 import AddModal from  "./AddModal/AddModal"
 
 
 class Home extends PureComponent {
-    static defaultProps = {};
 
-    static propTypes = {};
     state = {
         books: [],
         addModalVisible: false

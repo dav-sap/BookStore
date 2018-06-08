@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prestart": "start mongod --port 3055 --dbpath ./localDB",
-    "start": "nodemon ./bin/www",
+    "start": "set PORT=3443 && node ./bin/www",
     "poststart": "mongo admin --eval 'db.shutdownServer()'"
   },
   "dependencies": {

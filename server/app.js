@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:3055/localDB');
@@ -18,9 +17,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
+// app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '/../client/build')));
 app.use('/books', booksRouter);
 
 // The "catchall" handler: for any request that doesn't

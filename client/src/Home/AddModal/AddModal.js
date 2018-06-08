@@ -1,14 +1,11 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import './add-modal.css'
 import Input from 'react-md-input';
 
 const genres = ["Science fiction", "Satire", "Drama", "Action", "Romance", "Mystery", "Horror"]
 
 class AddModal extends PureComponent {
-    static defaultProps = {};
 
-    static propTypes = {};
     state = {
         title: "",
         isbnNumber: "",

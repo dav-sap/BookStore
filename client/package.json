@@ -1,8 +1,8 @@
 {
-  "name": "client",
+  "name": "book_store",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000/",
+  "proxy": "http://localhost:3443/",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

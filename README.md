@@ -6,9 +6,15 @@ npm install
 
 npm start
 ```
+## Dependecies
+Make sure you have
+```
+1.node+npm
+2.mongoDB, add mongod to you PATH Enviroment variables
+```
 
 server will be hosted on your localhost at:
 
 ```
-http://localhost:3443/
+http://localhost:3000/
 ```

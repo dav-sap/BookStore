@@ -14,14 +14,25 @@ router.post('/new_book', function (req, res, next) {
             genre: req.body.genre ? req.body.genre : "",
             price: req.body.price
         };
-        books.create(newBook, function (err, newBook) {
-            if (err) {
-                console.error(err);
-                res.status(500).send("error creating new book in DB")
-            } else {
-                res.send("Book Created!");
-            }
-        })
+        if (req.body.edit) {
+            books.findOneAndUpdate({isbn_number : req.body.isbn_number}, {'$set': newBook}, function (err, book) {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send("error creating new book in DB")
+                } else {
+                    res.send("Book Updated!");
+                }
+            })
+        } else {
+            books.create(newBook, function (err, newBook) {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send("error creating new book in DB")
+                } else {
+                    res.send("Book Created!");
+                }
+            })
+        }
     } else {
         res.status(400).send("Wrong parameters sent")
     }

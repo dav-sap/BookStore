@@ -1,5 +1,6 @@
 .book-list {
     height: 400px;
+    overflow: scroll;
 }
 .add-icon {
     height: 30px;

@@ -34,6 +34,8 @@ class BookList extends PureComponent {
         this.setState({
             addModalVisible: false
         })
+        this.props.fetchBooks();
+
     }
     render() {
         return (

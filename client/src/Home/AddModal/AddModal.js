@@ -30,7 +30,8 @@ class AddModal extends PureComponent {
                     "author": this.state.author,
                     "publication_date": this.state.publicationDate,
                     "genre": this.state.genre,
-                    "price": this.state.price
+                    "price": this.state.price,
+                    "edit": !this.props.new
                 })
             };
             let response = await fetch("/books/new_book", reqProps);
@@ -122,8 +123,8 @@ class AddModal extends PureComponent {
 
                     </div>
 
-                    <button className="modal-button" onClick={this.addBook}>Add</button>
-                    <button className="modal-button" onClick={this.props.handleClose}>Close</button>
+                    <button className="modal-button add-button" onClick={this.addBook}>{this.props.new ? "Add" : "Submit Changes"}</button>
+                    <button className="modal-button close-button" onClick={this.props.handleClose}>Close</button>
                 </section>
             </div>
         );

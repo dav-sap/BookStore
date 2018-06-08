@@ -1,7 +1,10 @@
 # BookStore
 This is a basic website for managing a book store.
-To start the server, go to server folder and run 
+
+To start the server:
 ```
+cd server
+
 npm install
 
 npm start

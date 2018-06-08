@@ -98,8 +98,8 @@ class AddModal extends PureComponent {
         const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
         return (
-            <div className={showHideClassName}>
-                <section className="modal-main">
+            <div className={showHideClassName} onClick={this.props.handleClose}>
+                <section className="modal-main" onClick={(e) => e.stopPropagation()}>
                     <div className="inputs">
                         <Input label="Name" type="text" value={this.state.title} onChange={(e) => this.setState({title: e.target.value})}/>
                         <Input label="Publication Date" type="date" value={this.state.publicationDate} onChange={(e) => this.setState({publicationDate: e.target.value})}/>

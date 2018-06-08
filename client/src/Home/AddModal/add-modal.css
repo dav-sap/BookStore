@@ -30,6 +30,7 @@
     margin: auto;
     padding: 30px;
     grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
 }
 .genre-list {
     position: relative;

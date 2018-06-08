@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books');
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:3055/localDB');
 var app = express();
 
 // view engine setup

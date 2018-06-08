@@ -1,0 +1,50 @@
+.book-list {
+    height: 400px;
+}
+.add-icon {
+    height: 30px;
+    width: 30px;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: -10px;
+
+}
+.add-icon:hover {
+    transform: scale(1.2);
+}
+.book {
+    border-radius: 10px;
+    border: 1.3px solid lightcoral;
+    width: 250px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 3px;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    background-color: white;
+    color: black;
+
+}
+.title {
+    margin: auto;
+    cursor: pointer;
+}
+.title:hover {
+    color: gray;
+}
+.price {
+    margin: auto;
+}
+.remove-icon {
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.remove-icon:hover {
+    transform: scale(1.2);
+}

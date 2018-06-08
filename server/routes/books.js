@@ -8,7 +8,7 @@ router.post('/new_book', function (req, res, next) {
         var newBook = {
             title: req.body.title,
             isbn_number: req.body.isbn_number,
-            description: req.body.desc ? req.body.desc : "",
+            description: req.body.description ? req.body.description : "",
             author: req.body.author ? req.body.author : "",
             publication_date: req.body.publication_date ? new Date(req.body.publication_date) : undefined,
             genre: req.body.genre ? req.body.genre : "",
@@ -43,6 +43,20 @@ router.post('/remove_book', function (req, res, next) {
     } else {
         res.status(400).send("Wrong parameters sent")
     }
+});
+/* GET book by params. */
+router.get('/get_book', function(req, res, next) {
+    let isbnNumber = req.query.isbnNumber;
+    if (isbnNumber) {
+        books.findOne({isbn_number: isbnNumber}, function (err, book) {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error getting book from DB")
+            }
+            res.send({book: book});
+        });
+    }
+
 });
 /* GET books listing. */
 router.get('/all_books', function(req, res, next) {
